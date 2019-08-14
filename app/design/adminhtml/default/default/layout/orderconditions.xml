@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout>
+    <orderconditions_adminhtml_orderconditions_edit>
+          <reference name="head">
+			<action method="addItem">
+				<type>js</type>
+				<name>jquery-1.11.1.min.js</name>
+			</action>
+			<action method="addItem">
+				<type>js</type>
+				<name>ordertags.js</name>
+			</action>
+		</reference>
+    </orderconditions_adminhtml_orderconditions_edit>
+</layout>

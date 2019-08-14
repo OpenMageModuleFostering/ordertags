@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wli_Ordertags>
+            <version>0.1.0</version>
+        </Wli_Ordertags>
+    </modules>
+    <frontend>
+        <routers>
+            <ordertags>
+                <use>standard</use>
+                <args>
+                    <module>Wli_Ordertags</module>
+                    <frontName>ordertags</frontName>
+                </args>
+            </ordertags>
+        </routers>
+        <layout>
+            <updates>
+                <ordertags>
+                    <file>ordertags.xml</file>
+                </ordertags>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <ordertags>
+                <use>admin</use>
+                <args>
+                    <module>Wli_Ordertags</module>
+                    <frontName>ordertags</frontName>
+                </args>
+            </ordertags>
+        </routers>
+    </admin>
+    <adminhtml>
+    
+    
+        <menu>
+            <ordertags module="ordertags">
+                <title>Ordertags</title>
+                <sort_order>71</sort_order>               
+                <children>
+                    <items module="ordertags">
+                        <title>Manage Order Tags</title>
+                        <sort_order>10</sort_order>
+                        <action>ordertags/adminhtml_ordertags</action>
+                    </items>
+                </children>
+                 <children>
+                    <orderconditions module="orderconditions">
+                        <title>Manage Order Tag Conditions</title>
+                        <sort_order>11</sort_order>
+                        <action>orderconditions/adminhtml_orderconditions</action>
+                    </orderconditions>
+                </children>
+            </ordertags>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <ordertags>
+                            <title>Ordertags Module</title>
+                            <sort_order>200</sort_order>
+                        </ordertags>
+                    </children>
+                </admin>
+            </resources>   
+        </acl>
+        <layout>
+            <updates>
+                <ordertags>
+                    <file>ordertags.xml</file>
+                </ordertags>
+            </updates>
+        </layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <ordertags>
+                <class>Wli_Ordertags_Model</class>
+                <resourceModel>ordertags_mysql4</resourceModel>
+            </ordertags>
+            <ordertags_mysql4>
+                <class>Wli_Ordertags_Model_Mysql4</class>
+                <entities>
+                    <ordertags>
+                        <table>ordertags</table>
+                    </ordertags>
+                </entities>
+            </ordertags_mysql4>
+        </models>
+        <resources>
+            <ordertags_setup>
+                <setup>
+                    <module>Wli_Ordertags</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ordertags_setup>
+            <ordertags_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+ 
+ 
+            </ordertags_write>
+            <ordertags_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ordertags_read>
+        </resources>
+        <blocks>
+            <ordertags>
+                <class>Wli_Ordertags_Block</class>
+            </ordertags>
+            
+            
+			<adminhtml>
+				<rewrite>
+					<sales_order_grid>Wli_Ordertags_Block_Adminhtml_Order_Grid</sales_order_grid>
+				</rewrite>
+			</adminhtml>
+
+            
+            
+        </blocks>
+        <helpers>
+            <ordertags>
+                <class>Wli_Ordertags_Helper</class>
+            </ordertags>
+        </helpers>
+    </global>
+</config>
