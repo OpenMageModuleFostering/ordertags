@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Ordertags",
+    "name": "OpenMageModuleFostering\/Ordertags",
     "type": "magento-module",
     "license": "GNU-General-Public-License-(GPL)",
     "homepage": "",
     "description": "Admin can view the advanced filter based on the order priority and conditons.",
     "authors": [
-    {
-        "name": "Weblineindia",
-        "email": "partners@weblineindia.com"
-    }
-],
+        {
+            "name": "Weblineindia",
+            "email": "partners@weblineindia.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
